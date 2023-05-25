@@ -1,0 +1,68 @@
+﻿<Window x:Class="DTPRegistrationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Регистрация ДТП" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button x:Name="AddDTPButton" Content="Добавить" Width="100" Margin="0 0 10 0" Click="AddDTPButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Green" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="FontSize" Value="14" />
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="EditDTPButton" Content="Изменить" Width="100" Margin="0 0 10 0" Click="EditDTPButton_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Yellow" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="FontSize" Value="14" />
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="DeleteDTPButton" Content="Удалить" Width="100" Click="DeleteDTPButton_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Red" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderThickness" Value="1" />
+                        <Setter Property="Padding" Value="10" />
+                        <Setter Property="FontSize" Value="14" />
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+
+        <ListBox x:Name="DTPListBox" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" SelectionMode="Single" Margin="10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="LightGray" BorderThickness="1" Padding="10" Margin="0 0 0 10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding Date}" FontWeight="Bold" FontSize="16" />
+                            <TextBlock Grid.Row="1" Text="{Binding Location}" FontSize="14" />
+                            <TextBlock Grid.Row="2" Text="{Binding Drivers}" FontSize="14" />
+                            <TextBlock Grid.Row="3" Text="{Binding LicensePlates}" FontSize="14" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
