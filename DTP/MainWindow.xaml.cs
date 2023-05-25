@@ -82,7 +82,6 @@ namespace DTPRegistrationApp
             File.WriteAllText("dtp.json", jsonString);
         }
     }
-
     public class DTPOccurrence
     {
         public DateTime Date { get; set; }
