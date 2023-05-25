@@ -17,7 +17,6 @@ namespace DTPRegistrationApp
             LoadDTPOccurrences();
             DTPListBox.ItemsSource = _dtpOccurrences.OrderBy(dtp => dtp.Date);
         }
-
         private void AddDTPButton_Click(object sender, RoutedEventArgs e)
         {
             var addDTPWindow = new AddDTPWindow();
@@ -33,7 +32,6 @@ namespace DTPRegistrationApp
                 SaveDTPOccurrences();
             }
         }
-
         private void EditDTPButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedDTPOccurrence = DTPListBox.SelectedItem as DTPOccurrence;
